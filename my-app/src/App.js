@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-//import axios from "axios";
 
 import TaskForm from "./pages/TaskForm";
 import TaskList from "./pages/TaskList";
@@ -15,26 +14,11 @@ import Logout from "./pages/Logout";
 import Trashed from "./pages/Trashed";
 
 function App() {
-  // State for managing fetched data and tasks
-  const [data, setData] = useState("");
+  // State for managing tasks
   const [tasks, setTasks] = useState([]);
   const [trashedTasks, setTrashedTasks] = useState([]);
   const [filterOption, setFilterOption] = useState({ priority: "All", status: "All" });
   const [sortOption, setSortOption] = useState("");
-
-  // Fetch data from backend on component mount
-  /*const getData = useCallback(async () => {
-    try {
-      const response = await axios.get("http://localhost:5000");
-      setData(response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }, []);*/
-
-  useEffect(() => {
-    getData(); // Fetch data once component mounts
-  }, [getData]);
 
   // Function to add a new task
   const addTask = useCallback((task) => {
