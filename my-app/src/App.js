@@ -25,7 +25,7 @@ function App() {
   // Fetch data from backend on component mount
   const getData = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:5000");
+      const response = await axios.get("https://task-zm9t.vercel.app/");
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
