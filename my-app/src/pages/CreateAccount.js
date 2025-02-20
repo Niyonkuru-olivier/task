@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-//import axios from 'axios'; // Import axios
 import "./CreateAccount.css"; // Import the CSS file
 
 const CreateAccount = () => {
@@ -18,28 +17,11 @@ const CreateAccount = () => {
   } = useForm();
 
   // Handler for form submission
-  const submitHandler = async (data) => {
+  const submitHandler = (data) => {
     console.log("Form submitted with data:", data);
 
-    // Send a POST request to the backend to create an account
-  /*  try {
-      const response = await axios.post('http://localhost:5000/users/CreateAccount', {
-        email: data.email,
-        password: data.password,
-      });*/
-
-      // Handle successful account creation and navigate to the login page
-      if (response.status === 201) {
-        navigate("/login");
-      }
-    } catch (error) {
-      // Display error messages from the backend or a generic error message
-      if (error.response && error.response.data && error.response.data.error) {
-        alert(error.response.data.error);
-      } else {
-        alert("An error occurred. Please try again later.");
-      }
-    }
+    // Simulate successful account creation and navigate to the login page
+    navigate("/login");
   };
 
   return (
