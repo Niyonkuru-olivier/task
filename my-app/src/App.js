@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 
 import TaskForm from "./pages/TaskForm";
 import TaskList from "./pages/TaskList";
@@ -23,14 +23,14 @@ function App() {
   const [sortOption, setSortOption] = useState("");
 
   // Fetch data from backend on component mount
-  const getData = useCallback(async () => {
+  /*const getData = useCallback(async () => {
     try {
       const response = await axios.get("http://localhost:5000");
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     getData(); // Fetch data once component mounts
