@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Import Axios
+//import axios from "axios"; // Import Axios
 import "./Login.css"; // Import the CSS file
 
 const Login = () => {
@@ -11,12 +11,12 @@ const Login = () => {
   const submitHandler = async (data) => {
     console.log("Form submitted with data:", data);
 
-    try {
+  /*  try {
       // Make the POST request to the backend login route
       const response = await axios.post('http://localhost:5000/users/Login', {
         email: data.email,
         password: data.password,
-      });
+      });*/
 
       // Check if the login is successful
       if (response.data.token) {
