@@ -1,36 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-//import axios from "axios"; // Import Axios
 import "./Login.css"; // Import the CSS file
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
-  const submitHandler = async (data) => {
+  const submitHandler = (data) => {
     console.log("Form submitted with data:", data);
 
-  /*  try {
-      // Make the POST request to the backend login route
-      const response = await axios.post('http://localhost:5000/users/Login', {
-        email: data.email,
-        password: data.password,
-      });*/
-
-      // Check if the login is successful
-      if (response.data.token) {
-        // Store the JWT token in localStorage or cookies
-        localStorage.setItem('token', response.data.token);
-
-        // Navigate to the dashboard after successful login
-        navigate("/dashboard");
-      } else {
-        alert("Login failed. Please check your credentials.");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-      alert("An error occurred during login. Please check your credentials.");
+    // For now, just simulate successful login
+    const isLoginSuccessful = true; // Simulate a successful login condition
+    if (isLoginSuccessful) {
+      // Navigate to the dashboard after successful login
+      navigate("/dashboard");
+    } else {
+      alert("Login failed. Please check your credentials.");
     }
   };
 
